@@ -8,7 +8,8 @@
  *
  * Released under the MIT license.
  */
-(function(angular) {
+/*global angular */
+(function(angular, $) {
   'use strict';
 
   angular.module('htmlSortable', [])
@@ -38,25 +39,27 @@
               }, true);
 
               $(element).sortable().bind('sortupdate', function(e, data) {
-                var $source = data.startparent.attr('ng-model');
-                var $dest   = data.endparent.attr('ng-model');
-
-                var $sourceModel = $parse($source);
-                var $destModel = $parse($dest);
-
-                var $start = data.oldindex;
-                var $end   = data.item.index();
+                var $source = data.startparent.attr('ng-model'),
+                    $dest   = data.endparent.attr('ng-model'),
+                    $sourceModel = $parse($source),
+                    $destModel = $parse($dest),
+                    $start = data.oldindex,
+                    $end   = data.item.index(),
+                    $items,
+                    $item,
+                    $sourceItems,
+                    $destItems;
 
                 scope.$apply(function () {
                   if ($source === $dest) {
-                    var $items = $sourceModel(scope);
+                    $items = $sourceModel(scope);
                     $items.splice($end, 0, $items.splice($start, 1)[0]);
                     $sourceModel.assign(scope, $items);
                   }
                   else {
-                    var $item = scope[$source][$start];
-                    var $sourceItems = $sourceModel(scope);
-                    var $destItems = $destModel(scope);
+                    $item = scope[$source][$start];
+                    $sourceItems = $sourceModel(scope);
+                    $destItems = $destModel(scope);
 
                     $sourceItems.splice($start, 1);
                     $destItems.splice($end, 0, $item);
@@ -71,4 +74,4 @@
         };
       }
     ]);
-}(angular));
+}(angular, window.jQuery));
