@@ -1,9 +1,8 @@
-HTML5 Sortable jQuery Plugin
-============================
+#HTML5 Sortable jQuery Plugin [![Build Status](https://travis-ci.org/makepanic/html5sortable.svg?branch=master)](https://travis-ci.org/makepanic/html5sortable)
 
 This is a fork of the original html5sortable project with [various patches added from the community](#differences-from-the-original-version).
 
-#Features
+##Features
 --------
 * Less than 1KB (minified and gzipped).
 * Built using native HTML5 drag and drop API.
@@ -12,7 +11,7 @@ This is a fork of the original html5sortable project with [various patches added
 * Works in IE 5.5+, Firefox 3.5+, Chrome 3+, Safari 3+ and, Opera 12+.
 * Comes with an AngularJS directive.
 
-#Installation
+##Installation
 ---
 
 * The recommended way, using [Bower](http://bower.io):
@@ -23,7 +22,7 @@ bower install html.sortable
 * The non-Bower way: include ```html.sortable.x.y.z.js``` or the minified version, ```html.sortable.min.x.y.z.js```.
 
 
-#Examples
+##Examples
 ---
 
 * [Examples](http://htmlpreview.github.io/?https://github.com/voidberg/html5sortable/blob/master/examples/examples.html)
@@ -31,7 +30,7 @@ bower install html.sortable
 * [AngularJS with connected lists](http://htmlpreview.github.io/?https://github.com/voidberg/html5sortable/blob/master/examples/angular-connected.html)
 
 
-#Build it / Hack it
+##Build it / Hack it
 ---
 
 ```
@@ -43,7 +42,7 @@ npm install
 grunt
 ```
 
-#Usage
+##Usage
 ---
 
 Use `sortable` method to create a sortable list:
@@ -149,7 +148,7 @@ yepnope({
 });
 ```
 
-#Differences from the original version
+##Differences from the original version
 ---
 
 * [Add reload method](https://github.com/farhadi/html5sortable/pull/61)
@@ -162,16 +161,16 @@ yepnope({
 * Fix for reload method causing options to be reset to defaults.
 
 
-#Authors
+##Authors
 ---
 
 Original code by Ali Farhadi. This version is mantained by [Alexandru Badiu](http://ctrlz.ro).
 
-#Contributors
+##Contributors
 ---
 
 See AUTHORS file.
 
-#License
+##License
 ---
 Released under the MIT license.
